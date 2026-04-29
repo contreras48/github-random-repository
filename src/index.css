@@ -8,11 +8,15 @@
   --bg-accent: #1C1B1D;
   --color-text: #E5E1E4;
   --color-text-variant: #C7BFD2;
+  --color-text-caption: #958D9F;
+  --color-text-error: #290002;
   --border-color: #27272A;
   --border-color-error: #3D2828;
   --color-icon-error: #FFB4AB;
   --color-icon-susses: #4EDEA3;
   --color-icon: #958E9F;
+  --color-button-primary: #D0BCFF;
+  --color-button-error: #FF5451;
 
 }
 
@@ -37,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .title {
@@ -50,9 +54,19 @@ body {
   color: var(--color-text);
 }
 
+.title-repository{
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
 .body {
   font-size: 1.125rem;
   color: var(--color-text-variant);
+}
+
+.caption {
+  font-size: 0..75rem;
+  color: var(--color-text-caption);
 }
 
 .header > h1 {
@@ -74,6 +88,7 @@ select {
   background-position: right 1rem center;
   background-size: 2rem;
   background-color: var(--bg-accent);
+  color: var(--color-icon);
   padding: 1rem;
   padding-right: 2.5rem; /* espacio para la flecha */
   width: 100%;
@@ -83,6 +98,70 @@ select {
 
 option {
   color: var(--color-text);
+}
+
+.repository-user {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.repository-user > img {
+  width: 64px;
+  height: 64px;
+}
+
+.repository-user h3{
+  margin: 0;
+  text-align: left;
+}
+
+.repository-descrption {
+  text-align: left;
+}
+
+.repository-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.icon-label {
+  display: flex;
+  gap: .35rem;
+  align-items: center;
+}
+
+.icon-label > .icon {
+  color: var(--color-icon);
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  width: 700px;
+  font-weight: bold;
+}
+
+.button-primary {
+  background: var(--color-button-primary);
+  color: var(--primary);
+}
+
+.button-error {
+  background: var(--color-button-error);
+  color: var(--color-text-error);
 }
 
 

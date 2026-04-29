@@ -1,6 +1,11 @@
-function Button(){
+import RefreshIcon from "./icons/RefreshIcon.jsx"
+
+function Button({icon: Icon, text, role}){
   return (
-    <button></button>
+    <button className={`body button-${role}`}>
+      <RefreshIcon />
+      <span >{text}</span>
+    </button>
   );
 }
 

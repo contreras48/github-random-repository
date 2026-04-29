@@ -4,9 +4,10 @@ import Search from "./components/Search.jsx"
 import Empty from "./components/Empty.jsx"
 import Loading from "./components/Loading.jsx"
 import Repository from "./components/Repository.jsx"
+import Error from "./components/Error.jsx"
 
 function App() {
-const [status, setStatus] = useState("empty")
+const [status, setStatus] = useState("loading")
 
   return (
     <>
@@ -21,6 +22,7 @@ const [status, setStatus] = useState("empty")
       {status === "empty" && <Empty /> }
       {status === "loading" && <Loading /> }
       {status === "load" && <Repository /> }
+      {status === "error" && <Error /> }
     </>
   )
 }
