@@ -4,7 +4,7 @@ function Loading(){
   return (
     <div>
       <div className="loading">
-        <FetchingIcon fill={"#E5E1E4"} width={44} height={44} />
+        <FetchingIcon fill={"#E5E1E4"} width={40} height={40} />
         <h2 className="subtitle">
           Fetching repository...     
         </h2>
