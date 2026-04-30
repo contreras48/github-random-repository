@@ -1,10 +1,10 @@
 import Button from "./Button.jsx";
 import Select from "./Select.jsx";
 
-function Search (){
+function Search ( { value, onChange }){
   return (
     <div className="container">
-      <Select />
+      <Select value={value} onChange={onChange} />
     </div>
   );
 }

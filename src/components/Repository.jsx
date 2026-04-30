@@ -5,34 +5,33 @@ import ClockIcon from "./icons/ClockIcon.jsx"
 import CricleIcon from "./icons/CircleIcon.jsx"
 import Button from "./Button.jsx"
 
-function Repository(){
-  const userIcon = "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png";
+function Repository( { avatarUrl, title, userName, description, language, starCount, forkCount, } ){
   return (
     <>
       <div className="container">
       <div className="repository-user">
-        <img src="userIcon" alt="" />
+        <img src={avatarUrl} alt="avatar" />
         <div>
           <h3 className="title-repository">
-          driver.js
+            {title}
           </h3>
           <span className="caption">
-            kamranahmedse / driver.js
+            {`${userName} / ${title}`}
           </span>
         </div>
       </div>
       <div className="repository-descrption">
         <p className="body">
-          A light-weight, no-dependency, vanilla JavaScript engine to drive the user's focus across the page. Highly customizable and supports all major browsers.
+          {description}
         </p>
       </div>
       <div className="repository-details">
         <div className="stats">
-          <IconLabel icon={CricleIcon} label={"JavaScript"} languaje={true} />
-          <IconLabel icon={StarIcon} label="1.8k"/>
-          <IconLabel icon={ForkIcon} label="1.2k"/>
+          <IconLabel icon={CricleIcon} label={language} languaje={true} />
+          <IconLabel icon={StarIcon} label={starCount}/>
+          <IconLabel icon={ForkIcon} label={forkCount}/>
         </div>
-        <IconLabel icon={ClockIcon} label="Update 2 days ago"/>
+        {/* <IconLabel icon={ClockIcon} label="Update 2 days ago"/> */}
       </div>
     </div>
     <Button text={"Click to refresh"} role={"primary"}/>
