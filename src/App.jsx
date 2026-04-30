@@ -8,27 +8,26 @@ import Error from "./components/Error.jsx"
 import { getRandomRepo } from "./services/githubRandomRepository.js"
 
 function App() {
-const [status, setStatus] = useState("empty");
-const [value, setValue] = useState("")
-const [repository, setRepository] = useState(null);
+  const [status, setStatus] = useState("empty");
+  const [value, setValue] = useState("")
+  const [repository, setRepository] = useState(null);
 
-useEffect(() => {
-  if (value === "") return
+  useEffect(() => {
+    if (value === "") return
 
-  setStatus("loading");
-  getRandomRepo(value).then(
+    setStatus("loading");
+    getRandomRepo(value).then(
       repo => {
         setRepository(repo);
         setStatus("load");
       })
-    .catch(
-      error => {
-        console.error(error);
-        setStatus("error")
-      }
-    )
-  console.log(repository)
-}, [value]);
+      .catch(
+        error => {
+          console.error(error);
+          setStatus("error")
+        }
+      )
+  }, [value]);
 
   return (
     <>
@@ -40,10 +39,10 @@ useEffect(() => {
         </div>
       </header>
       <Search value={value} onChange={setValue} />
-      {status === "empty" && <Empty /> }
-      {status === "loading" && <Loading /> }
-      {status === "load" && <Repository avatarUrl={repository.owner.avatar_url} title={repository.name} userName={repository.owner.login} description={repository.description} language={value} starCount={repository.stargazers_count} forkCount={repository.forks_count}/> }
-      {status === "error" && <Error /> }
+      {status === "empty" && <Empty />}
+      {status === "loading" && <Loading />}
+      {status === "load" && <Repository avatarUrl={repository.owner.avatar_url} title={repository.name} userName={repository.owner.login} description={repository.description} language={value} starCount={repository.stargazers_count} forkCount={repository.forks_count} />}
+      {status === "error" && <Error />}
     </>
   )
 }
