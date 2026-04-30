@@ -12,7 +12,7 @@ function App() {
   const [value, setValue] = useState("")
   const [repository, setRepository] = useState(null);
 
-  useEffect(() => {
+  const fetchRepo = () => {
     if (value === "") return
 
     setStatus("loading");
@@ -27,6 +27,10 @@ function App() {
           setStatus("error")
         }
       )
+  }
+
+  useEffect(() => {
+    fetchRepo();
   }, [value]);
 
   return (
@@ -41,8 +45,8 @@ function App() {
       <Search value={value} onChange={setValue} />
       {status === "empty" && <Empty />}
       {status === "loading" && <Loading />}
-      {status === "load" && <Repository avatarUrl={repository.owner.avatar_url} title={repository.name} userName={repository.owner.login} description={repository.description} language={value} starCount={repository.stargazers_count} forkCount={repository.forks_count} />}
-      {status === "error" && <Error />}
+      {status === "load" && <Repository avatarUrl={repository.owner.avatar_url} title={repository.name} userName={repository.owner.login} description={repository.description} language={value} starCount={repository.stargazers_count} forkCount={repository.forks_count} onClick={fetchRepo} />}
+      {status === "error" && <Error onClick={fetchRepo} />}
     </>
   )
 }

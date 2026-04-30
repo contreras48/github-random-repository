@@ -5,7 +5,7 @@ import ClockIcon from "./icons/ClockIcon.jsx"
 import CricleIcon from "./icons/CircleIcon.jsx"
 import Button from "./Button.jsx"
 
-function Repository( { avatarUrl, title, userName, description, language, starCount, forkCount, } ){
+function Repository( { avatarUrl, title, userName, description, language, starCount, forkCount, onClick} ){
   return (
     <>
       <div className="container">
@@ -34,7 +34,7 @@ function Repository( { avatarUrl, title, userName, description, language, starCo
         {/* <IconLabel icon={ClockIcon} label="Update 2 days ago"/> */}
       </div>
     </div>
-    <Button text={"Click to refresh"} role={"primary"}/>
+    <Button text={"Click to refresh"} role={"primary"} onClick={onClick}/>
     </>
   );
 }

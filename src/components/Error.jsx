@@ -1,7 +1,7 @@
 import Button from "./Button.jsx"
 import ErrorIcon from "./icons/ErrrorIcon.jsx";
 
-function Repository() {
+function Repository( { onClick }) {
   return (
     <>
       <div className="container">
@@ -10,7 +10,7 @@ function Repository() {
           Error fetching respositories
         </p>
       </div>
-      <Button text={"Click to refresh"} role={"error"} />
+      <Button text={"Click to refresh"} role={"error"} onClick={onClick}/>
     </>
   );
 }
